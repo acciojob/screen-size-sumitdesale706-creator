@@ -1,7 +1,14 @@
 //your JS code here. If required.
 let body = document.querySelector("body");
-let display = document.createElement("h1");
 
-display.innerText = `Width ${window.innerWidth} and Height ${window.innerHeight}`;
+let div = document.createElement("div");
+div.id = "sizeInfo";
 
-body.appendChild(display);
+let h1 = document.createElement("h1");
+
+
+window.addEventListener("resize", () => {
+	h1.innerText = `Width ${window.innerWidth} and Height ${window.innerHeight}`;
+    div.appendChild(h1);
+    body.appendChild(div);
+})
